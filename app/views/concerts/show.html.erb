@@ -75,10 +75,10 @@
       <% end %>
     <% end %>
   </div>
-
+   <ul class="video-container">
     <div class="videos">
         <% @concert_songs.each_with_index do |concert_song, i| %>
-          <div class="video-box" id="song<%= i %>">
+          <li class="video-box" id="song<%= i %>">
             <h3 class="song_label"><%= "#{(i+1)}. " + concert_song.song.title %></h3>
             <% concert_song.videos.each do |video| %>
               <% if video.correct == false %>
@@ -87,15 +87,16 @@
                 <span>Video Flagged</span><a href="#" class="report-video" data-video-id=<%= video.id %>>Unflag</a>
                 </div>
               <% else %>
-                <div class="video-container">
+                <div class="video-wrapper">
                   <div class="youtube" id="<%= video.identifier %>" style="width: 320px; height: 180px;"></div>
                   <a href="#" class="report-video" data-video-id=<%= video.id %>>Report Video</a>
                 </div>
               <% end %>
             <% end %>
-          </div>
+          </li>
         <% end %>
       </div>
+    </ul>
 </div>
 
 <div id="player"></div>

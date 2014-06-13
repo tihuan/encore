@@ -186,13 +186,19 @@ input#add_attendee_btn{
 	margin: 10px 300px 10px 15px;
 }
 
+.video-container {
+	position: relative;
+	top: 23em;
+	right: 9em;
+}
+
 .video-box {
-	margin: 10px 10px 10px 0px;
-	padding: 5px 10px;
-	min-width: 359px;
-	min-height: 316px;
+	// margin: 10px 10px 10px 0px;
+	// padding: 5px 10px;
+	// min-width: 359px;
+	// min-height: 316px;
 	// border: 2px solid;
-	float: left;
+	// float: left;
 	background-color: $base-red*0.85;
 	color: white;
 
@@ -212,13 +218,8 @@ input#add_attendee_btn{
 	font-size: 1.2em;
 }
 
-.video-container {
-	top: 20px;
+.video-wrapper {
 	padding: 10px 5px 5px 10px;
-}
-
-.video-container > a {
-	top: 0;
 }
 
 .song_label {
