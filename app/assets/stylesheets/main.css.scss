@@ -133,7 +133,6 @@ body.searches.index {
  	@include shift(3);
  	color: $base-red;
  	font-size: 1.5em;
- 	margin-top: -0.7em;
  	border: 2px outset white;
  }
  input.search-button {
@@ -252,11 +251,13 @@ body.searches.index {
 }
 
 #suggestion {
-	position: relative;
-	bottom: -5.3em;
+	position: fixed;
+	bottom: 0;
 	background-color: white;
 	font-size: 1em;
 	opacity: 0.75;
+	width: 100%;
+
 }
 
 #suggestion > a {
