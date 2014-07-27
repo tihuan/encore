@@ -28,19 +28,16 @@ class SearchesController < ApplicationController
     #===============================================
     #search if the concert already exists
     search_date = search_params[0]
-
     #If the venue doesn't exist, there has never been a show there
     #therefore go right to making the concert
-    @venue = Venue.find_or_create_by(name: search_params[2])
+    @venue = Venue.find_by(name: search_params[2])
 
     if @venue != nil
 
       #if the venue does exist, search for a concert that took place at that venue
       #on this specific date
       @concerts = Concert.where(venue_id: @venue.id, date: search_date)
-
       matched_concert_ids = @concerts.map { |concert| concert.id }
-
       #to account for festivals go through every possible artist that played
       #that venue on that specific day
       matched_concert_ids.each do |concertID|
